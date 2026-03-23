@@ -1,0 +1,16 @@
+using Lab5.Domain.Entities;
+
+namespace Lab5.Application.Interfaces.Repositories;
+
+public interface ISessionRepository
+{
+    Task<Session?> GetByIdAsync(Guid id);
+
+    Task AddAsync(Session session);
+
+    Task UpdateAsync(Session session);
+
+    Task DeleteAsync(Guid id);
+
+    Task<IEnumerable<Session>> GetExpiredSessionsAsync();
+}
